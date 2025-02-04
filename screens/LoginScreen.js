@@ -17,7 +17,7 @@ const LoginScreen = () => {
         password: Yup.string().min(6, 'Пароль має бути не менше 6 символів').required("Пароль є обов'язковим"),
       })}
       onSubmit={(values, { setSubmitting, setErrors }) => {
-        console.log("Logging in with:", values); // Додаємо це для перевірки введених даних
+        console.log("Logging in with:", values);
         const user = users.find((user) => user.email === values.email && user.password === values.password);
         if (user) {
           dispatch(setCurrentUser(user));
